@@ -16,4 +16,16 @@ describe Ship do
     end
   end
 
+  describe '#next_horizontal_cell' do
+    it 'returns a cell one to the right' do
+      expect(ship.next_horizontal_cell([1,1])).to eq [2,1]
+    end
+  end
+
+  describe '#next_vertical_cell' do
+    it 'returns a cell one up' do
+      expect(ship.next_horizontal_cell([1,1])).to eq [2,1]
+    end
+  end
+
 end
