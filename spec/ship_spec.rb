@@ -28,12 +28,25 @@ describe Ship do
     end
   end
 
-  describe '#assume position' do
-    it 'populates the cells array with a series of coorinates in a straight line' do
+  describe '#assume_position' do
+    it 'populates the cells array with a series of coorinates in a horizontal line' do
       ship.stub(:orientation) { 'horizontal' }
       ship.stub(:starting_cell) { [1,1] }
       ship.assume_position
       expect(ship.cells). to eq [[1, 1], [2, 1], [3, 1], [4, 1]]
+    end
+    it 'populates the cells array with a series of coorinates in a vertical line' do
+      ship.stub(:orientation) { 'vertical' }
+      ship.stub(:starting_cell) { [3,4] }
+      ship.assume_position
+      expect(ship.cells). to eq [[3,4], [3,5], [3, 6], [3,7]]
+    end
+  end
+
+  describe '#starting_cell' do
+    it 'returns an array of two numbers between 0 and 9' do
+      expect((0..9).to_a).to include ship.starting_cell[0]
+      expect((0..9).to_a).to include ship.starting_cell[1]
     end
   end
 

@@ -33,7 +33,7 @@ class Ship
   end
 
   def random_coordinate
-    rand(1..10)
+    rand(9)
   end
 
 end
