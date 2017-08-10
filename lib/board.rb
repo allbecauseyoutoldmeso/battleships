@@ -15,4 +15,8 @@ class Board
     end
   end
 
+  def on_board?(cells)
+    cells.all? { |cell| (0..9).to_a.include?(cell[0]) && (0..9).to_a.include?(cell[1]) }
+  end
+
 end

@@ -38,4 +38,14 @@ describe Board do
     end
   end
 
+  describe '#on_board?' do
+    it 'returns true if the coordinates in an array are all on the board' do
+      expect(board.on_board?([[1,1],[1,2],[1,3]])).to eq true
+    end
+    it 'returns false if the not all the coordinates are on the board' do
+      expect(board.on_board?([[1,9],[1,10],[1,11]])).to eq false
+    end
+  end
+
+
 end
