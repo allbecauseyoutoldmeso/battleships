@@ -1,22 +1,22 @@
 class Ship
 
-  attr_reader :length, :orientation, :cells
+  attr_reader :length, :cells
 
   def initialize(length)
-    @orientation = ['vertical', 'horizontal'].sample
     @length = length
     @cells = []
   end
 
   def calculate_position
+    orientation = random_orientation
     cell = starting_cell
     length.times do
       cells.push cell
-      cell = next_cell(cell)
+      cell = next_cell(cell, orientation)
     end
   end
 
-  def next_cell(cell)
+  def next_cell(cell, orientation)
     orientation == 'vertical' ? next_vertical_cell(cell) : next_horizontal_cell(cell)
   end
 
@@ -26,6 +26,10 @@ class Ship
 
   def next_horizontal_cell(cell)
     [cell[0], cell[1]+1]
+  end
+
+  def random_orientation
+    ['horizonatal', 'vertical'].sample
   end
 
   def starting_cell
