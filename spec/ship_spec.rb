@@ -18,28 +18,28 @@ describe Ship do
 
   describe '#next_horizontal_cell' do
     it 'returns a cell one to the right' do
-      expect(ship.next_horizontal_cell([1,1])).to eq [2,1]
+      expect(ship.next_horizontal_cell([1,1])).to eq [1,2]
     end
   end
 
   describe '#next_vertical_cell' do
     it 'returns a cell one up' do
-      expect(ship.next_vertical_cell([1,1])).to eq [1,2]
+      expect(ship.next_vertical_cell([1,1])).to eq [2,1]
     end
   end
 
-  describe '#assume_position' do
+  describe '#calculate_position' do
     it 'populates the cells array with a series of coorinates in a horizontal line' do
       ship.stub(:orientation) { 'horizontal' }
       ship.stub(:starting_cell) { [1,1] }
-      ship.assume_position
-      expect(ship.cells). to eq [[1, 1], [2, 1], [3, 1], [4, 1]]
+      ship.calculate_position
+      expect(ship.cells). to eq [[1, 1], [1,2], [1,3], [1,4]]
     end
     it 'populates the cells array with a series of coorinates in a vertical line' do
       ship.stub(:orientation) { 'vertical' }
       ship.stub(:starting_cell) { [3,4] }
-      ship.assume_position
-      expect(ship.cells). to eq [[3,4], [3,5], [3, 6], [3,7]]
+      ship.calculate_position
+      expect(ship.cells). to eq [[3,4], [4,4], [5,4], [6,4]]
     end
   end
 

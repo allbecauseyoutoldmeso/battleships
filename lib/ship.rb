@@ -8,7 +8,7 @@ class Ship
     @cells = []
   end
 
-  def assume_position
+  def calculate_position
     cell = starting_cell
     length.times do
       cells.push cell
@@ -20,11 +20,11 @@ class Ship
     orientation == 'vertical' ? next_vertical_cell(cell) : next_horizontal_cell(cell)
   end
 
-  def next_horizontal_cell(cell)
+  def next_vertical_cell(cell)
     [cell[0]+1, cell[1]]
   end
 
-  def next_vertical_cell(cell)
+  def next_horizontal_cell(cell)
     [cell[0], cell[1]+1]
   end
 
