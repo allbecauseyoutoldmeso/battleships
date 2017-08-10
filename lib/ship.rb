@@ -9,7 +9,7 @@ class Ship
 
   def calculate_position
     orientation = random_orientation
-    cell = starting_cell
+    cell = random_starting_cell
     length.times do
       cells.push cell
       cell = next_cell(cell, orientation)
@@ -32,7 +32,7 @@ class Ship
     ['horizonatal', 'vertical'].sample
   end
 
-  def starting_cell
+  def random_starting_cell
     [random_coordinate, random_coordinate]
   end
 

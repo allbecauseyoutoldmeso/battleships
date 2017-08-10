@@ -25,22 +25,22 @@ describe Ship do
   describe '#calculate_position' do
     it 'populates the cells array with a series of coorinates in a horizontal line' do
       ship.stub(:random_orientation) { 'horizontal' }
-      ship.stub(:starting_cell) { [1,1] }
+      ship.stub(:random_starting_cell) { [1,1] }
       ship.calculate_position
       expect(ship.cells). to eq [[1, 1], [1,2], [1,3], [1,4]]
     end
     it 'populates the cells array with a series of coorinates in a vertical line' do
       ship.stub(:random_orientation) { 'vertical' }
-      ship.stub(:starting_cell) { [3,4] }
+      ship.stub(:random_starting_cell) { [3,4] }
       ship.calculate_position
       expect(ship.cells). to eq [[3,4], [4,4], [5,4], [6,4]]
     end
   end
 
-  describe '#starting_cell' do
+  describe '#random_starting_cell' do
     it 'returns an array of two numbers between 0 and 9' do
-      expect((0..9).to_a).to include ship.starting_cell[0]
-      expect((0..9).to_a).to include ship.starting_cell[1]
+      expect((0..9).to_a).to include ship.random_starting_cell[0]
+      expect((0..9).to_a).to include ship.random_starting_cell[1]
     end
   end
 
