@@ -47,5 +47,15 @@ describe Board do
     end
   end
 
+  describe '#unoccupied?' do
+    it 'returns true if the coordinates in an array are all free' do
+      expect(board.unoccupied?([[1,1],[1,2],[1,3]])).to eq true
+    end
+    it 'returns fals if any of the coordinates are occupied' do
+      board.add_ship(battleship)
+      expect(board.unoccupied?([[1,1],[1,2],[1,3]])).to eq false
+    end
+  end
+
 
 end
