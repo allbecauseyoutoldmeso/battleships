@@ -5,7 +5,7 @@ class Ship
 
   def initialize(length)
     @length = length
-    @cells = []
+    # @cells = []
   end
 
   def calculate_position
@@ -45,6 +45,8 @@ class Ship
 end
 
 class Carrier < Ship
+
+  attr_accessor :name
 
   def initialize
     @length = 5

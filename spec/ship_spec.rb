@@ -54,6 +54,10 @@ describe Carrier do
     expect(carrier.length).to eq 5
   end
 
+  it 'has a name' do
+    expect(carrier.name).to eq 'carrier'
+  end
+
   it '#caluculate_cells creates five cell coordinates' do
     carrier.calculate_position
     expect(carrier.cells.length).to eq 5
