@@ -2,7 +2,7 @@ require 'ship'
 
 describe Ship do
 
-  subject(:ship) { described_class.new(4) }
+  subject(:ship) { described_class.new(4, 'battleship') }
 
   describe '#length' do
     it 'returns the length of the ship' do

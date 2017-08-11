@@ -1,11 +1,11 @@
 class Ship
 
-  attr_reader :length
+  attr_reader :length, :name
   attr_accessor :cells
 
-  def initialize(length)
+  def initialize(length, name)
     @length = length
-    # @cells = []
+    @name = name
   end
 
   def calculate_position
@@ -46,11 +46,45 @@ end
 
 class Carrier < Ship
 
-  attr_accessor :name
-
   def initialize
     @length = 5
     @name = 'carrier'
+  end
+
+end
+
+class Battleship < Ship
+
+  def initialize
+    @length = 4
+    @name = 'battleship'
+  end
+
+end
+
+class Cruiser < Ship
+
+  def initialize
+    @length = 3
+    @name = 'cruiser'
+  end
+
+end
+
+class Submarine < Ship
+
+  def initialize
+    @length = 3
+    @name = 'submarine'
+  end
+
+end
+
+class Destroyer < Ship
+
+  def initialize
+    @length = 2
+    @name = 'destroyer'
   end
 
 end
