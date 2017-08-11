@@ -23,11 +23,11 @@ class Ship
   end
 
   def next_vertical_cell(cell)
-    [cell[0]+1, cell[1]]
+    [cell[0]+1, cell[1], 'intact']
   end
 
   def next_horizontal_cell(cell)
-    [cell[0], cell[1]+1]
+    [cell[0], cell[1]+1, 'intact']
   end
 
   def random_orientation
@@ -35,7 +35,7 @@ class Ship
   end
 
   def random_starting_cell
-    [random_coordinate, random_coordinate]
+    [random_coordinate, random_coordinate, 'intact']
   end
 
   def random_coordinate

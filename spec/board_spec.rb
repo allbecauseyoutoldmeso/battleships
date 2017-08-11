@@ -5,7 +5,6 @@ describe Board do
   subject(:board) { described_class.new }
   let(:battleship) { double :ship, cells: [[1,1],[2,1],[3,1],[4,1]] }
 
-
   describe '#grid' do
     it 'returns an array of ten by ten' do
       expect(board.grid).to eq [['','','','','','','','','',''],
