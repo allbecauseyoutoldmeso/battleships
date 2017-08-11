@@ -1,13 +1,15 @@
 class Board
 
-  attr_reader :grid
+  attr_reader :grid, :ships
 
   def initialize
     @grid = []
     10.times { @grid.push Array.new(10, '')}
+    @ships = []
   end
 
   def add_ship(ship)
+    ships.push(ship)
     ship.cells.each do |cell|
       grid[cell[0]][cell[1]] = 'x'
     end
@@ -18,7 +20,8 @@ class Board
   end
 
   def unoccupied?(cells)
-    cells.all? { |cell| grid[cell[0]][cell[1]] == '' }
+    # cells.all? { |cell| grid[cell[0]][cell[1]] == '' }
+    cells.all? { |cell| ships.all? { |ship| ! ship.cells.include?(cell) } }
   end
 
 end
