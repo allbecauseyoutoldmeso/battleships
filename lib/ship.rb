@@ -1,6 +1,7 @@
 class Ship
 
-  attr_reader :length, :cells
+  attr_reader :length
+  attr_accessor :cells
 
   def initialize(length)
     @length = length
@@ -8,6 +9,7 @@ class Ship
   end
 
   def calculate_position
+    self.cells = []
     orientation = random_orientation
     cell = random_starting_cell
     length.times do
