@@ -6,7 +6,7 @@ class Computer
 attr_reader :ships, :board
 
 def initialize
-  @ships = [Ship.new(5), Ship.new(4), Ship.new(4), Ship.new(3), Ship.new(3), Ship.new(3), Ship.new(3), Ship.new(3), Ship.new(3), Ship.new(3), Ship.new(2), Ship.new(2), Ship.new(2), Ship.new(2), Ship.new(2)]
+  @ships = [Carrier.new, Battleship.new, Battleship.new, Battleship.new, Battleship.new, Cruiser.new, Cruiser.new, Cruiser.new, Submarine.new, Submarine.new, Submarine.new, Destroyer.new, Destroyer.new, Destroyer.new, Destroyer.new, Destroyer.new]
   @board = Board.new
 end
 
