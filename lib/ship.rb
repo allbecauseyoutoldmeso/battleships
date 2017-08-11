@@ -43,3 +43,12 @@ class Ship
   end
 
 end
+
+class Carrier < Ship
+
+  def initialize
+    @length = 5
+    @name = 'carrier'
+  end
+
+end

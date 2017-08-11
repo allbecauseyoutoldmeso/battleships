@@ -45,3 +45,18 @@ describe Ship do
   end
 
 end
+
+describe Carrier do
+
+  subject(:carrier) { described_class.new }
+
+  it 'has a set length' do
+    expect(carrier.length).to eq 5
+  end
+
+  it '#caluculate_cells creates five cell coordinates' do
+    carrier.calculate_position
+    expect(carrier.cells.length).to eq 5
+  end
+
+end
