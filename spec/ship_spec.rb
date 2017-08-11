@@ -4,6 +4,17 @@ describe Ship do
 
   subject(:ship) { described_class.new(4, 'battleship') }
 
+  describe '#sunk?' do
+    it 'returns true if all cells are hit' do
+      ship.stub(:cells) { [[1, 1,'hit'], [1,2,'hit'], [1,3,'hit'], [1,4,'hit']] }
+      expect(ship.sunk?).to eq true
+    end
+    it 'returns false if not all cells are hit' do
+      ship.stub(:cells) { [[1, 1,'hit'], [1,2,'intact'], [1,3,'hit'], [1,4,'hit']] }
+      expect(ship.sunk?).to eq false
+    end
+  end
+
   describe '#length' do
     it 'returns the length of the ship' do
       expect(ship.length).to eq 4

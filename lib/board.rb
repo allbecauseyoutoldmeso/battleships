@@ -20,7 +20,6 @@ class Board
   end
 
   def unoccupied?(cells)
-    # cells.all? { |cell| grid[cell[0]][cell[1]] != 'x' }
     cells.all? { |cell| ships.all? { |ship| ! ship.cells.include?(cell) } }
   end
 

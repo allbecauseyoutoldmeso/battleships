@@ -8,6 +8,10 @@ class Ship
     @name = name
   end
 
+  def sunk?
+    cells.all? { |cell| cell[2] == 'hit' }
+  end
+
   def calculate_position
     self.cells = []
     orientation = random_orientation
